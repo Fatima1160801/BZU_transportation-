@@ -21,7 +21,7 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('bank-num')->unique();
-            $table->enum('admintype', ['super', 'sub']);
+            $table->foreignId('role_id')->constrained();
             $table->timestamps();
         });
     }

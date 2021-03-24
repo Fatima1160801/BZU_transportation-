@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Trip extends Model
 {
     use HasFactory;
-
+    //protected $guarded['id','created_at','updated_at'];
     public function driver (){
     return $this->belongsTo(Driver::class);
 

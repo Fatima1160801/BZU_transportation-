@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    //protected $guarded['id','created_at','updated_at'];
     /**
      * The attributes that are mass assignable.
      *
