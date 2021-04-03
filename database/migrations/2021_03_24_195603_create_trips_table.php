@@ -20,9 +20,10 @@ class CreateTripsTable extends Migration
             $table->time('pickup-time');
             $table->text('pickup');
             $table->text('dropoff');
+            $table->enum('statusTrip',['waiting','delete','confirmed'])->default('waiting');
             $table->double('price',5,2);
-            $table->integer('passenger-counter');
-            $table->foreignId('driver_id')->constrained();
+            $table->bigInteger('passenger-counter');
+            $table->foreignId('driver_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('admin_id')->constrained();
             $table->timestamps();
         });

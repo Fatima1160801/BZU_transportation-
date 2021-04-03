@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverCreditController extends Controller
 {
-    public function DriverCredit($id){
+    public function show($id){
         return view('driver.credit.credit');
     }
 }

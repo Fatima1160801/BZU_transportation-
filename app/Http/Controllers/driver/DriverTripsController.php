@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverTripsController extends Controller
 {
-    public function DriverTrips($id){
+    public function show($id){
         return view('driver.trips.trips');
     }
 }

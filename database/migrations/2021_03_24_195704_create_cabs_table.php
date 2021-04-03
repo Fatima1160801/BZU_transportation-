@@ -20,7 +20,7 @@ class CreateCabsTable extends Migration
             $table->tinyinteger('seat-num');
             $table->string('license');
             $table->string('insurance');
-            $table->foreignId('driver_id')->constrained();
+            $table->foreignId('driver_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('machineNumber');
             $table->timestamps();
         });

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ManualBookingsController extends Controller
 {
-    public function ManualBookings($id){
+    public function show($id){
         return view('admin.manualBookings.manualBookings');
     }
 }

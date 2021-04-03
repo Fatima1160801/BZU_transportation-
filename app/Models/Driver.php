@@ -16,5 +16,8 @@ class Driver extends Model
     public function cabs(){
         return $this->hasOne(Cab::class);
     }
+    public function admins(){
+        return $this->hasone(Admin::class);
+    }
 
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function profile($id){
+    public function show($id){
         return view('web.profile.My-Profile');
     }
 }

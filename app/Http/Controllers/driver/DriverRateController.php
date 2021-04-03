@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverRateController extends Controller
 {
-    public function DriverRate($id){
+    public function show($id){
         return view('driver.rate.rate');
     }
 }

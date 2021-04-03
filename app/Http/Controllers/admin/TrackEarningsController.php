@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class TrackEarningsController extends Controller
 {
-    public function TrackEarnings($id){
+    public function show($id){
         return view('admin.trackEarning.trackEarning');
-        
+
     }
 }

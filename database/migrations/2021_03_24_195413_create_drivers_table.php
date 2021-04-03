@@ -17,9 +17,12 @@ class CreateDriversTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone')->unique();
-            $table->integer('ssn')->unique();
-            $table->enum('available', ['yes', 'no']);
-            $table->enum('busy', ['yes', 'no']);
+            $table->string('password');
+            $table->bigInteger('ssn')->unique();
+            $table->double('salray');
+            $table->string('license');
+            $table->enum('available', ['yes', 'no'])->default('yes');
+            $table->enum('busy', ['yes', 'no'])->default('no');
             $table->string('bank-num');
             $table->foreignId('admin_id')->constrained();
             $table->timestamps();

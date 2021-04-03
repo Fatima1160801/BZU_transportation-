@@ -16,12 +16,13 @@ class CreateAdminsTable extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('ssn')->unique();
+            $table->bigInteger('ssn')->unique();
             $table->string('phone');
+            $table->double('salray');
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('bank-num')->unique();
-            $table->foreignId('role_id')->constrained();
+            $table->foreignId('role_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminProfileController extends Controller
 {
-    public function AdminProfile($id){
+    public function show($id){
         return view('admin.profile.profile');
     }
 }

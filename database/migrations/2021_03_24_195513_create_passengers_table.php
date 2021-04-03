@@ -16,12 +16,13 @@ class CreatePassengersTable extends Migration
         Schema::create('passengers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('BZU-ID')->unique();
+            $table->bigInteger('BZU-ID')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone')->unique();
-            $table->enum('canbook', ['yes','no']);
+            $table->enum('canbook', ['yes','no'])->default('yes');
             $table->double('balance');
+            $table->string('Favorite_location')->nullable();
             $table->timestamps();
         });
     }

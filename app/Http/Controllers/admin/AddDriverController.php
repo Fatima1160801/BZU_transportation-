@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AddDriverController extends Controller
 {
-    public function AddDriver($id){
+    public function show($id){
         return view('admin.addDriver.addDriver');
     }
+
 }

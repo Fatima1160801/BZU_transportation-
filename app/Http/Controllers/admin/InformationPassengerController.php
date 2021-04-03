@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class InformationPassengerController extends Controller
 {
-    public function InformationPassenger($id){
+    public function show($id){
         return view('admin.informationPassenger.informationPassenger');
 
     }

@@ -201,5 +201,4 @@
 </div>
 
 
-</div><!-- /#right-panel -->
 @endsection

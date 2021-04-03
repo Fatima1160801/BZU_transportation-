@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TaxisController extends Controller
 {
-    public function Taxis($id){
+    public function show($id){
         return view('admin.taxis.taxis');
     }
 }

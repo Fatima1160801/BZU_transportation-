@@ -11,6 +11,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-sm-8">
                 <div class="page-header float-right">
                     <div class="page-title">
@@ -197,7 +198,7 @@
                                                 <!-- /# column -->
 
                                                 <div class="GetQuote text-right">
-                                                   <a href="Newbooking-confirm.html"><button type="button" class="btn btn-outline-warning">Get Quote<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button></a>
+                                                   <a href="/passenger/Newbooking-confirm/1"><button type="button" class="btn btn-outline-warning">Get Quote<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button></a>
 
                                                   </div>
 
@@ -373,11 +374,13 @@
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
+
+                                                                            @foreach ($trips as $trip)
                                                                             <tr>
-                                                                                <td>12/1/2021</td>
-                                                                                <td>8:00</td>
-                                                                                <td>birzeit university</td>
-                                                                                <td>ramallah</td>
+                                                                                <td>{{$trip->pickupDate}}</td>
+                                                                                <td>{{$trip->pickupTime}}</td>
+                                                                                <td>{{$trip->pickup}}</td>
+                                                                                <td>{{$trip->dropoff}}</td>
                                                                                 <td><select class="form-control">
                                                                                     <option>0</option>
                                                                                     <option>1</option>
@@ -401,33 +404,8 @@
                                                                                 <td> <a href="Newbooking-confirm.html"><button type="button" class="btn btn-outline-warning">Get Quote<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button> </a> </td>
 
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td>12/1/2021</td>
-                                                                                <td>9:00</td>
-                                                                                <td>ramallah</td>
-                                                                                <td>birzeit university</td>
-                                                                                <td><select class="form-control">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                    <option>4</option>
-                                                                                    <option>5</option>
-                                                                                    <option>6</option>
-                                                                                    <option>7</option>
-                                                                                    </select></td>
-                                                                                    <td><div class="form-check-inline form-check">
-                                                                                        <label for="inline-radio1" class="form-check-label  mr-4">
-                                                                                            <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input ">Cash
-                                                                                        </label>
-                                                                                        <label for="inline-radio2" class="form-check-label mr-4 ">
-                                                                                            <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input ">BZU card
-                                                                                        </label>
+                                                                            @endforeach
 
-                                                                                    </div></td>
-                                                                                    <td> <a href="Newbooking-confirm.html"><button type="button" class="btn btn-outline-warning">Get Quote<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button></a></td>
-
-                                                                            </tr>
 
                                                                         </tbody>
                                                                     </table>
@@ -456,9 +434,5 @@
                 </div> <!-- .row -->
             </div><!-- .animated -->
 
-        </div><!-- .content -->
-
-
-    </div><!-- /#right-panel -->
 
 @endsection

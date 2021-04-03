@@ -40,7 +40,7 @@
                             <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Passenger Profile</a>
-                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Credit Cards</a>
+                                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">BZU Cards</a>
                                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Favourite</a>
 
 
@@ -175,30 +175,5 @@
         </div> <!-- .row -->
     </div><!-- .animated -->
      <!-- footer start  -->
-     <div class="card-footer">
-        <div class="panel-footer">
-            <div class="col-sm-3 mt-3">
-                <div class="foo mt-2"><p>© 2020 BZU TRANSPORTATION</p></div>
-            </div>
-            <div class="col-sm-5 "></div>
-            <div class="col-sm-4 mt-3  d-flex justify-content-around ">
-
-                    <div class="form-group d-flex  ">
-                        <select class="form-control " id="PickUp_SelectedCity" name="PickUp.SelectedCity">
-                        <option selected="selected" value="53.479874/-2.239151">english </option>
-                        <option value="51.507033/-0.116043">arabic</option>
-                        </select>
-                </div>
-
-                <a class="nav-link mr-1" href="#"><i class="fa fa-question-circle"></i> HELP</a>
-                <a class="nav-link mr-1" href="#"><i class="fa fa-phone-square"></i> SOS</a>
-            </div>
-        </div>
-    </div>
-
-     <!-- footer end -->
-</div><!-- .content -->
-
-
-</div><!-- /#right-panel -->
+    
 @endsection

@@ -17,8 +17,8 @@ class CreatePassengerTripsTable extends Migration
             $table->id();
             $table->integer('seat-num');
             $table->text('note');
-            $table->foreignId('passenger_id')->constrained();
-            $table->foreignId('trip_id')->constrained();
+            $table->foreignId('passenger_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('trip_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

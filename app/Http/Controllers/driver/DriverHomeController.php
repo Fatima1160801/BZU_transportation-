@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverHomeController extends Controller
 {
-    public function index($id){
+    public function show($id){
         return view('driver.home.index');
     }
 }

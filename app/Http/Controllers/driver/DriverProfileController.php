@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverProfileController extends Controller
 {
-    public function DriverProfile($id){
+    public function show($id){
         return view('driver.profile.profile');
     }
 }

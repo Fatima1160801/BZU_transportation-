@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BookedController extends Controller
 {
-    public function booked($id){
+    public function show($id){
         return view('web.booked.booked');
     }
 }

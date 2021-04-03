@@ -36,78 +36,86 @@
 
     <!-- Left Panel -->
 
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
+   <!-- Left Panel -->
+<!-- Left Panel -->
 
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="./"><img src="" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('admin/images/logo2.png')}}" alt="Logo"></a>
-            </div>
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
 
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">Management</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-edit (alias)"></i>Manage Trips</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa ti-truck"></i><a href="Bus.html">Bus</a></li>
-                            <li><i class="fa fa-truck"></i><a href="Fourd.html">Fourd</a></li>
-                            <li><i class="fa ti-car"></i><a href="Taxi.html">Taxi</a></li>
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="./"><img src="" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="./"><img src="images/logo.png" alt="Logo"></a>
+        </div>
 
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Manage Driver</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-map-marker"></i><a href="Track-Drivers .html">Track Drivers </a></li>
-                            <li><i class="fa fa-plus"></i><a href="Driver-Add.html">Add New driver </a></li>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                </li>
+                <h3 class="menu-title">Management</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-edit (alias)"></i>Manage Trips</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa ti-truck"></i><a href="Bus.html">Bus</a></li>
+                        <li><i class="fa fa-truck"></i><a href="Fourd.html">Fourd</a></li>
+                        <li><i class="fa ti-car"></i><a href="Taxi.html">Taxi</a></li>
 
-                            <li><i class="fa fa-info"></i><a href="Drivers-information.html">Information</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  ti-user"></i>Manage Passenger</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-pencil-square"></i><a href="Manual-Bookings.html">Manual Bookings </a></li>
-                            <li><i class="fa ti-gift"></i><a href="Manage-Rewards.html">Manage Rewards </a></li>
-                            <li><i class="fa fa-info"></i><a href="Passenger-Information.html"> Information</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Manage Driver</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-map-marker"></i><a href="Track-Drivers .html">Track Drivers </a></li>
+                        <li><i class="fa fa-plus"></i><a href="Driver-Add.html">Add New driver </a></li>
+                        <li><i class="fa fa-info"></i><a href="Drivers-information.html">Information</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  ti-user"></i>Manage Passenger</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-pencil-square"></i><a href="Manual-Bookings.html">Manual Bookings </a></li>
+                        <li><i class="fa ti-gift"></i><a href="Manage-Rewards.html">Manage Rewards </a></li>
+                        <li><i class="fa fa-info"></i><a href="Passenger-Information.html"> Information</a></li>
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Manage Admin</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-plus"></i><a href="AddAdmin.html">Add New Admin </a></li>
+                        <li><i class="fa fa-info"></i><a href="Passenger-Information.html"> Information</a></li>
+                    </ul>
+                </li>
 
-
-                    <h3 class="menu-title">Communicate</h3><!-- /.menu-title -->
-
-
-                    <li>
-                        <a href="Notifications.html"><i class="menu-icon fa fa-bell-o"></i>Send Notifications </a>
-                    </li>
-                    <li>
-                        <a href="Messages.html"> <i class="menu-icon ti-email"></i>Send Messages </a>
-                    </li>
-
-                    <h3 class="menu-title">Analytics</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Analytics</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa ti-money"></i><a href="track-earnings.html">Track Earnings</a></li>
-                            <li><i class="menu-icon fa ti-time"></i><a href="Rush-hours.html">Rush Hours</a></li>
-                            <li><i class="menu-icon fa ti-plus"></i><a href="Extra.html">Extra</a></li>
-                        </ul>
-                    </li>
+                <h3 class="menu-title">Communicate</h3><!-- /.menu-title -->
 
 
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
+                <li>
+                    <a href="Notifications.html"><i class="menu-icon fa fa-bell-o"></i>Send Notifications </a>
+                </li>
+                <li>
+                    <a href="Messages.html"> <i class="menu-icon ti-email"></i>Send Messages </a>
+                </li>
 
-    <!-- Left Panel -->
+                <h3 class="menu-title">Analytics</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Analytics</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa ti-money"></i><a href="track-earnings.html">Track Earnings</a></li>
+                        <li><i class="menu-icon fa ti-time"></i><a href="Rush-hours.html">Rush Hours</a></li>
+                        <li><i class="menu-icon fa ti-plus"></i><a href="Extra.html">Extra</a></li>
+                    </ul>
+                </li>
+
+
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
 
     <!-- Right Panel -->
 

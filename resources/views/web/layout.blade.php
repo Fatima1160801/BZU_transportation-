@@ -131,17 +131,17 @@
                             </a>
 
                             <div class="user-menu dropdown-menu ">
-                                <a class="nav-link" href="My-Profile.html"><i class="fa fa-user"></i> My Profile</a>
+                                <a class="nav-link" href="My-Profile.html"><i class="fa fa-user"></i> {{__('web.My profile')}}</a>
 
-                                <a class="nav-link" href="My-Rate.html"><i class="fa fa-star-half-o"></i> My Rate </a>
-                                <a class="nav-link" href="Rewards.html"><i class="fa fa-star-half-o"></i> Rewards </a>
+                                <a class="nav-link" href="My-Rate.html"><i class="fa fa-star-half-o"></i> {{__('web.My Rate')}}</a>
+                                <a class="nav-link" href="Rewards.html"><i class="fa fa-star-half-o"></i> {{__('web.Rewards')}} </a>
 
 
-                                <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                                <a class="nav-link" href="#"><i class="fa fa-power-off"></i> {{__('web.Logout')}}</a>
                             </div>
 
-                            <a class="nav-link mr-1" href="Trips.html"><i class="fa ti-panel"></i> Trips</a>
-                            <a class="nav-link" href="#"><i class="fa fa-plus"></i> New Booking</a>
+                            <a class="nav-link mr-1" href="Trips.html"><i class="fa ti-panel"></i> {{__('web.Trips')}}</a>
+                            <a class="nav-link" href="#"><i class="fa fa-plus"></i> {{__('web.New Booking')}}</a>
 
                         </div>
 
@@ -162,6 +162,33 @@
         </header><!-- /header -->
 
 @yield('main');
+
+<div class="card-footer">
+    <div class="panel-footer">
+        <div class="col-sm-3 mt-3">
+            <div class="foo mt-2"><p>© 2020 BZU TRANSPORTATION</p></div>
+        </div>
+        <div class="col-sm-5 "></div>
+        <div class="col-sm-4 mt-3  d-flex justify-content-around ">
+
+            @if(App::getLocale()=="ar")
+            <a class="nav-link mr-1" href="{{url('lang/set/en')}}"><i class="fa fa-question-circle"></i> english</a>
+            @else
+            <a class="nav-link mr-1" href="{{url('lang/set/ar')}}"><i class="fa fa-question-circle"></i> arabic</a>
+            @endif
+            <a class="nav-link mr-1" href="#"><i class="fa fa-question-circle"></i> HELP</a>
+            <a class="nav-link mr-1" href="#"><i class="fa fa-phone-square"></i> SOS</a>
+
+
+        </div>
+    </div>
+</div>
+
+ <!-- footer end -->
+<!-- .content -->
+
+
+</div><!-- /#right-panel -->
 
 
 

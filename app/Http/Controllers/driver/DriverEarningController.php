@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class DriverEarningController extends Controller
 {
-    public function Earning($id){
+    public function show($id){
         return view('driver.earning.earning');
     }
 }

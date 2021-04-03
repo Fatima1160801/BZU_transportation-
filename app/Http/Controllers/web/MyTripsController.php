@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MyTripsController extends Controller
 {
-    public function MyTrips($id){
+    public function show($id){
         return view('web.myTrips.myTrips');
     }
 }
