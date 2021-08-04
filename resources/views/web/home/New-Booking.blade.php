@@ -3,26 +3,6 @@
 @section('main')
         <!-- Header-->
 
-        <div class="breadcrumbs ">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <a  href="index.html"> <h1>BZU Transportation</h1></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li><a href="index.html">{{__('web.Home')}}</a></li>
-                            <li class="active">{{__('web.New Booking')}}</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -76,20 +56,29 @@
                                     <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-taxi" role="tabpanel" aria-labelledby="nav-home-tab">
                                             @include('web.inc.requestTrip')
-                                            <form  method="POST" action="{{url('requestTaxiTrip/1')}}">
+                                            <form  method="POST" action="{{url("requestTaxiTrip")}}">
                                                 @csrf
+                                                <input type="hidden" name="cabType" value="taxi" ><!--- trip_id -->
+                                                <input name="statusTrip" value="confirmed" type="hidden">
+                                                <input name="passenger_id" value="{{Auth::user()->id}}"  type="hidden">
+
+
+
+
+
+
                                                 <div class="col-lg-6">
                                                     <div class="card">
                                                         <div class="card-header"> {{__('web.Booking')}}</div>
                                                         <div class="card-body card-block">
-                                                            <input name="taxi" value="taxi" type="hidden">
+
 
 
                                                                 <div class="row ">
                                                                     <div class="col col-md-6">
 
                                                                         <label for=""> <i class="fa fa-calendar"></i>{{__('web.Pickup date')}}</label>
-                                                                        <input  class="form-control" type="date" name="date" placeholder="Add the date, please"  value="" >
+                                                                        <input  class="form-control" type="date" name="pickupDate" placeholder="Add the date, please"  value="" >
                                                                     </div>
 
 
@@ -97,7 +86,7 @@
 
                                                                     <div class="col col-md-6">
                                                                         <label for=""> <i class="fa fa fa-clock-o "></i> {{__('web.Pickup time')}}</label>
-                                                                       <input   class="form-control" type="time" name="time"  value="">
+                                                                       <input   class="form-control" type="time" name="pickupTime"  value="">
 
 
 
@@ -124,7 +113,7 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                            <input type="text" value="" name="Pickup" id="Pickup">
+                                                                            <input type="text" value="" name="pickup" id="Pickup" value="" placeholder="Address" class="form-control">
 
                                                                         </div>
 
@@ -147,12 +136,13 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                            <input class="form-control" id="Dropoff" name="Dropoff" placeholder="Address" type="text" value="">
+                                                                            <input class="form-control" id="Dropoff" name="dropoff" placeholder="Address" type="text" value="">
 
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <br>
+
 
 
                                                         </div>
@@ -190,7 +180,11 @@
                                                                         <div>
                                                                             <label><i class="fas fa  fa-comment mr-1"></i>{{__('web.Driver note (optional)')}}</label>
                                                                             <input class="form-control" id="DriverNote" name="DriverNote" placeholder="Blank" type="text" value="">
+
                                                                         </div>
+
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -213,9 +207,11 @@
 
                                         <div class="tab-pane fade" id="nav-ford" role="tabpanel" name="van" aria-labelledby="nav-profile-tab">
                                             @include('web.inc.requestTrip')
-                                             <form method="POST" action="{{url("requestVanTrip/1")}}" >
+                                             <form method="POST" action="{{url("requestVanTrip/")}}" >
                                                 @csrf
-                                                <input type="hidden" id="Van" name="van" value="van">
+                                                <input type="hidden" id="Van" name="cabType" value="van">
+                                                <input name="statusTrip" value="confirmed" type="hidden"><!--- trip_id -->
+                                                <input name="passenger_id" value="{{Auth::user()->id}}"  type="hidden">
 
                                                 <div class="col-lg-6">
                                                     <div class="card">
@@ -227,21 +223,15 @@
                                                                 <div class="col col-md-6">
 
                                                                     <label for=""> <i class="fa fa-calendar"></i>{{__('web.Pickup date')}}</label>
-                                                                    <input  class="form-control" type="date" name="date" placeholder="Add the date, please"  value="" >
+                                                                    <input  class="form-control" type="date" name="pickupDate" placeholder="Add the date, please"  value="" >
                                                                 </div>
-
-
-
 
                                                                 <div class="col col-md-6">
                                                                     <label for=""> <i class="fa fa fa-clock-o "></i> {{__('web.Pickup time')}}</label>
-                                                                   <input   class="form-control" type="time" name="time"  value="">
+                                                                   <input   class="form-control" type="time" name="pickupTime"  value="">
 
                                                                 </div>
-
-
                                                             </div>
-
                                                                 <br>
 
                                                                 <div class="row form-group">
@@ -258,7 +248,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <input type="text" id="Pickup" name="Pickup" placeholder="Address" class="form-control"  value="">
+                                                                            <input type="text" id="Pickup" name="pickup" placeholder="Address" class="form-control"  value="">
                                                                         </div>
 
                                                                     </div>
@@ -280,7 +270,7 @@
                                                                                 </div>
                                                                             </div>
 
-                                                                            <input class="form-control" id="Dropoff" name="Dropoff" placeholder="Address" type="text" value="" >
+                                                                            <input class="form-control" id="Dropoff" name="dropoff" placeholder="Address" type="text" value="" >
 
                                                                         </div>
                                                                     </div>
@@ -304,8 +294,7 @@
 
                                                                         <div class="num">
                                                                             <label class="numofpass"> <i class="fa  fa-users"></i> {{__('web.Number of passengers')}}</label>
-                                                                            <select class="form-control" name="numPass">
-                                                                            <option  value="0">0</option>
+                                                                            <select class="form-control" name="seatNum">
                                                                             <option  value="1">1</option>
                                                                             <option  value="2">2</option>
                                                                             <option  value="3">3</option>
@@ -336,7 +325,7 @@
 
                                                                         <div>
                                                                             <label><i class="fas fa  fa-comment mr-1"></i>{{__('web.Driver note (optional)')}}</label>
-                                                                            <input class="form-control" id="DriverNote" name="DriverNote" placeholder="Blank" type="text" value="">
+                                                                            <input class="form-control" id="DNote" name="DriverNote" placeholder="Blank" type="text" value="">
                                                                         </div>
 
                                                                     </div>
@@ -361,6 +350,14 @@
 
                                         <!--navbar tage for bus--->
                                         <div class="tab-pane fade" id="nav-Bus" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+
+                                            <form id="bus-trip-form" method="POST" action="{{url("requestBusTrip/")}}">
+                                            @csrf
+                                            </form>
+
+
+                                                <input name="cabType" value="bus" type="hidden" form="bus-trip-form">
 
 
 
@@ -391,34 +388,42 @@
                                                                         <tbody>
 
                                                                             @foreach ($trips as $trip)
+                                                                            @if($trip->cabType=='bus')
                                                                             <tr>
+
+                                                                            <input name="id" value="{{$trip->id}}" type="hidden" form="bus-trip-form">
+                                                                            <input name="statusTrip" value="confirmed" type="hidden" form="bus-trip-form">
+
+
                                                                                 <td>{{$trip->pickupDate}}</td>
                                                                                 <td>{{$trip->pickupTime}}</td>
                                                                                 <td>{{$trip->pickup}}</td>
                                                                                 <td>{{$trip->dropoff}}</td>
-                                                                                <td><select class="form-control">
-                                                                                    <option>0</option>
-                                                                                    <option>1</option>
-                                                                                    <option>2</option>
-                                                                                    <option>3</option>
-                                                                                    <option>4</option>
-                                                                                    <option>5</option>
-                                                                                    <option>6</option>
-                                                                                    <option>7</option>
-                                                                                    </select></td>
-                                                                                    <td><div class="form-check-inline form-check">
+                                                                                <td>
+                                                                                    <select name="seatNum" class="form-control">
+                                                                                        <option  value="1" >1</option>
+                                                                                        <option  value="2" >2</option>
+                                                                                        <option  value="3" >3</option>
+                                                                                        <option  value="4" >4</option>
+                                                                                        <option  value="5" >5</option>
+                                                                                        <option  value="6" >6</option>
+                                                                                        <option  value="7" >7</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                 <td><div class="form-check-inline form-check">
                                                                                         <label for="inline-radio1" class="form-check-label  mr-4">
-                                                                                            <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input ">{{__('web.Cash')}}
+                                                                                            <input type="radio"  name="PaymentType" form="bus-trip-form" value="cash" class="form-check-input ">{{__('web.Cash')}}
                                                                                         </label>
                                                                                         <label for="inline-radio2" class="form-check-label mr-4 ">
-                                                                                            <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input "> {{__('web.BZU card')}}
+                                                                                            <input type="radio"  name="PaymentType" form="bus-trip-form" value="BZUid" class="form-check-input "> {{__('web.BZU card')}}
                                                                                         </label>
 
                                                                                     </div></td>
 
-                                                                                <td> <a href="{{url('passenger/Newbooking-confirm/1')}}"><button type="button" class="btn btn-outline-warning">{{__('web.Get Quote')}}<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button> </a> </td>
+                                                                                <td><button  type="submit" form="bus-trip-form" class="btn btn-outline-warning">{{__('web.Get Quote')}}<i class="fa ti-angle-double-right ml-1"></i>&nbsp; </button></td>
 
                                                                             </tr>
+                                                                            @endif
                                                                             @endforeach
 
 
@@ -432,6 +437,7 @@
                                                     </div>
                                                 </div><!-- .animated -->
                                             </div><!-- .content -->
+
 
 
                                         </div>

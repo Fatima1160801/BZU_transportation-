@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class DriverTripsController extends Controller
 {
     public function show($id){
-        return view('driver.trips.trips');
+        return view('trips.trips');
     }
 }

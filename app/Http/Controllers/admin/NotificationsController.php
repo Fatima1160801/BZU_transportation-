@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NotificationsController extends Controller
 {
-    public function show($id){
-        return view('admin.notificatios.notifications');
+    public function show(){
+        return view('notifications.notifications');
     }
 }

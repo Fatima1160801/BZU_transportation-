@@ -57,24 +57,28 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-body card-block">
-                                                    <form action="" method="post" class="">
+                                                    @include('web.inc.requestTrip')
+                                                    <form action="{{url('user/profile-information')}}" method="POST" >
+                                                        @method('PUT')
+                                                        @csrf
+
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                                                <input type="text" id="username" name="username" placeholder="{{__('web.Username')}}" class="form-control">
+                                                                <input type="text" id="username" name="name" value="{{old('name') ?? Auth::user()->name}}" placeholder="{{__('web.Username')}}" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                                                <input type="email" id="email" name="email" placeholder="{{__('web.Email')}}" class="form-control">
+                                                                <input type="email" id="email" name="email" value="{{old('email') ?? Auth::user()->email}}" placeholder="{{__('web.Email')}}" class="form-control">
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <div class="input-group">
                                                                 <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                                                <input type="text" id="Phone" name="Phone" placeholder="{{__('web.Phone')}}" class="form-control" >
+                                                                <input type="text" id="Phone" name="phone" value="{{old('phone') ?? Auth::user()->phone}}" placeholder="{{__('web.Phone')}}" class="form-control" >
                                                             </div>
                                                         </div>
                                                         <div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm"> {{__('web.change Detalies')}} </button></div>
@@ -94,18 +98,35 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-body card-block">
-                                                    <form action="" method="post" class="">
+                                                    @include('web.inc.requestTrip')
+                                                    <form action="{{url('user/password')}}" method="POST" >
+                                                        @method('PUT')
+
+
+                                                        @csrf
                                                         <div class="row form-group">
                                                             <div class="col col-md-3"><label for="hf-password" class=" form-control-label">{{__('web.Current password')}} </label></div>
-                                                            <div class="col-12 col-md-9"><input type="password" id="Current password" name="Current password"  class="form-control"></div>
+                                                            <div class="col-12 col-md-9"><input type="password" id="Current password" name="current_password"  @error('current_password','updatePassword') is-invalid @enderror class="form-control"></div>
                                                         </div>
+                                                        @error('current_password','updatePassword')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{$message}}</strong>
+                                                        </span>
+
+                                                        @enderror
                                                         <div class="row form-group">
                                                             <div class="col col-md-3"><label for="hf-password" class=" form-control-label">{{__('web.New password')}} </label></div>
-                                                            <div class="col-12 col-md-9"><input type="password" id="New password" name="New password"  class="form-control"></div>
+                                                            <div class="col-12 col-md-9"><input type="password" id="New password" name="password" @error('current_password','updatePassword') is-invalid @enderror class="form-control"></div>
                                                         </div>
+                                                        @error('current_password','updatePassword')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{$message}}</strong>
+                                                        </span>
+
+                                                        @enderror
                                                         <div class="row form-group">
                                                             <div class="col col-md-3"><label for="hf-password" class=" form-control-label">{{__('web.Confirm new password')}} </label></div>
-                                                            <div class="col-12 col-md-9"><input type="password" id="Confirm new password" name="Confirm new password"  class="form-control"></div>
+                                                            <div class="col-12 col-md-9"><input type="password" id="Confirm new password" name="ConfirmNewPassword"  @error('current_password','updatePassword') is-invalid @enderror  class="form-control"></div>
                                                         </div>
                                                         <div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm  ">{{__('web.change Password')}} </button></div>
 

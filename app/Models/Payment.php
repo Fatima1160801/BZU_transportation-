@@ -14,8 +14,11 @@ class Payment extends Model
     public function passengers(){
         return $this->belongsTo(Passenger::class);
     }
-    
+
     public function admins(){
         return $this->hasone(Admin::class);
+    }
+    public function payment(){
+        return $this->belongsToMany(Trip::class);
     }
 }

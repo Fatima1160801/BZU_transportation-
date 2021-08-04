@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TrackDriversController extends Controller
 {
-    public function show($id){
-        return view('admin.trackDriver.trackDriver');
+    public function show(){
+        return view('trackDriver.trackDriver');
     }
 }

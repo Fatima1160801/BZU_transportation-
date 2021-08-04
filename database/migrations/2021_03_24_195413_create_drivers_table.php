@@ -16,8 +16,13 @@ class CreateDriversTable extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone')->unique();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
+            $table->string('phone')->unique();
             $table->bigInteger('ssn')->unique();
             $table->double('salray');
             $table->string('license');
@@ -25,6 +30,7 @@ class CreateDriversTable extends Migration
             $table->enum('busy', ['yes', 'no'])->default('no');
             $table->string('banknumber');
             $table->foreignId('admin_id')->constrained();
+            $table->foreignId('users_id')->constrained->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

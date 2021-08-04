@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-    public function show($id){
-        return view('admin.messages.messages');
+    public function show(){
+        return view('messages.messages');
     }
 }

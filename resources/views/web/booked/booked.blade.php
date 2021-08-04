@@ -3,26 +3,6 @@
 @section('main')
  <!-- Header-->
 
- <div class="breadcrumbs ">
-    <div class="col-sm-4">
-        <div class="page-header float-left">
-            <div class="page-title">
-                <a  href="index.html"> <h1>BZU Transportation </h1></a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-8">
-        <div class="page-header float-right">
-            <div class="page-title">
-                <ol class="breadcrumb text-right">
-                    <li><a href="index.html">{{__('web.Home')}}</a></li>
-                    <li class="active">{{__('web.New Booking')}}</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="content mt-3 ">
     <div class="animated fadeIn">
@@ -84,16 +64,16 @@
                                 <div class="col-sm-3">
 
                                     <label class="control-label" for="BookingsList_0__BookerName"><i class="fa fa-user"></i> {{__('web.Booker')}} </label>
-                                    <p> {{$PassengerTrip->passenger_id}}<br />
-                                    <i class="fa fa-phone"></i> +972597511048<br />
-                                    <i class="fa fa-envelope"></i> saraharb950@gmail.com</p>
+                                    <p> {{Auth::user()->name}} <br />
+
+                                    <i class="fa fa-envelope">{{Auth::user()->email}}</i></p>
 
                                     <br />
 
                                     <label class="control-label" for="BookingsList_0__PassengerName"><i class="fa fa-user"></i> {{__('web.Passenger')}} </label> <span style="font-size:small;"></span>
-                                    <p>sara harb<br />
-                                    <i class="fa fa-phone"></i> +972597511048<br />
-                                    <i class="fa fa-envelope"></i> saraharb950@gmail.com</p>
+                                    <p>{{Auth::user()->name}}<br />
+
+                                    <i class="fa fa-envelope"></i> {{Auth::user()->email}}</p>
 
 
                                 </div>
@@ -147,8 +127,17 @@
                                 </div>
 
                                         <a class="btn btn-info btn-block" href="" id="al-viewbooking">{{__('web.View Booking')}}</a>
-                                        <button type="button" id="CancelBooking-117650887" class="btn btn-danger btn-block" onclick="CancelBooking(31445, 117650887, 'BookingsPage');">{{__('web.Cancel Booking')}} </button>
-
+                                     <!--   <form method="POST" action="{{url("trip/delete/$trip->id")}}">
+                                            @csrf
+                                            <button id="CancelBooking-117650887" class="btn btn-danger btn-block" onclick="CancelBooking(31445, 117650887, 'BookingsPage');">{{__('web.Cancel Booking')}} </button>
+                                        </form>
+                                    -->
+                                    <form method="POST" action="{{url("delete/$trip->id")}}">
+                                        @csrf
+                                        <input type="hidden" value="{{$trip->id}}" name="id">
+                                        <input type="hidden" name="statusTrip" value="deleted">
+                                        <button  class="btn btn-danger btn-block" >{{__('web.Cancel Booking')}}</button>
+                                    </form>
 
 
 

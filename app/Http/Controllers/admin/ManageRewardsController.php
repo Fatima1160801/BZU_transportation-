@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ManageRewardsController extends Controller
 {
-    public function show($id){
-        return view('admin.manageRewords.manageRewords');
+    public function show(){
+        return view('manageRewords.manageRewords');
     }
 }

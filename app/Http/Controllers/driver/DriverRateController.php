@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class DriverRateController extends Controller
 {
     public function show($id){
-        return view('driver.rate.rate');
+        return view('rate.rate');
     }
 }

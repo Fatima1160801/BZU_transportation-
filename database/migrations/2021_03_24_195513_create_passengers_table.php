@@ -15,14 +15,10 @@ class CreatePassengersTable extends Migration
     {
         Schema::create('passengers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->bigInteger('BZUid')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('phone')->unique();
             $table->enum('canbook', ['yes','no'])->default('yes');
             $table->double('balance');
             $table->string('Favorite_location')->nullable();
+            $table->foreignId('users_id')->constrained->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

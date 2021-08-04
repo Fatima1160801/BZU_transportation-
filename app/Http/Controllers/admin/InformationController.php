@@ -2,36 +2,43 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\Admin;
-use App\Models\Driver;
+
 use App\Models\Passenger;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Validator;
+
 class InformationController extends Controller
 {
-    //
-    public function showDriver(){
-        $data['drivers']=Driver::select('name','ssn','salray','phone','banknumber','license','available','busy','created_at')->get();
-        return view('admin.information.Driverinformation')->with($data);
 
-    }
-    public function showAdmin(){
-        $data['admins']=Admin::select('name','ssn','phone','email','banknumber','created_at')->get();
-     return view('admin.information.Admininformation')->with($data);
-
-
-         }
    public function showPassenger(){
-        $data['pasengers']=Passenger::select('name','BZUID','email','phone','canbook','balance','created_at')->get();
-        return view('admin.information.Passengerinformation')->with($data);
+    $data['pasengers']=Passenger::orderBy('created_at', 'desc')->paginate(2);
+    return view('information.Passengerinformation')->with($data);
+
    }
-   public function showpayment(){
-    return view('admin.subAdmin.PassPayment');
+
+    public function toggle(Passenger $passenger){
+     $passenger->update([
+            'canbook'=> ! $passenger->canbook
+        ]);
+            return back();
+    }
+
+public function showcabview(){
+    return view('information.cab');
 }
 
 
 
+public function passengersearch(Request $request){
+
+$data['pasengers']=Passenger::where('BZUid', 'LIKE','%'.$request->search.'%')->orderBy("id","desc")->paginate(5);
+
+return view('information.Passengerinformation')->with($data);
 }
 
+
+}
 

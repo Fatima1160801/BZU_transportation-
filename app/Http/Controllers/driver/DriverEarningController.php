@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\driver;
 
-use App\Http\Controllers\Controller;
+use App\Models\Trip;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DriverEarningController extends Controller
 {
     public function show($id){
-        return view('driver.earning.earning');
+        $idd=Auth::user()->id;
+        $data['trip']=Trip::where('driver_id',$idd)->get();
+
+        return view('earning.earning')->with($data);
     }
 }

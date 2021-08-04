@@ -9,14 +9,17 @@ class Passenger_Trip extends Model
 {
     use HasFactory;
     protected $guarded=['id','created_at','updated_at'];
+    protected $fillable=['seatNum','DriverNote','trip_id','passenger_id','statusTrip','PaymentType'];
 
-    public function trips (){
+    public function trips(){
         return $this->belongsToMany(Trip::class);
 
         }
         public function passengers(){
-            return $this->belongsToMany(Passenger::class);
 
-            }
-          
+            return $this->belongsToMany(Passenger::class,'id','passenger_id');
+
+         }
+
+
 }

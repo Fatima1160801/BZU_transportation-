@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class RateController extends Controller
 {
     public function show($id){
-        return view('web.rate.My-Rate');
+        return view('rate.My-Rate');
 
     }
 }

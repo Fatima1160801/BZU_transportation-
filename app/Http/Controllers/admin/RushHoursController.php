@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class RushHoursController extends Controller
 {
-    public function show($id){
-        return view('admin.rushHours.rushHours');
+    public function show(){
+        return view('rushHours.rushHours');
     }
 }

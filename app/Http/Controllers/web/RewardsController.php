@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class RewardsController extends Controller
 {
     public function show($id){
-        return view('web.rewords.rewords');
+        return view('rewords.rewords');
 
     }
 }

@@ -9,23 +9,12 @@ class Trip extends Model
 {
     use HasFactory;
     protected $guarded=['id','created_at','updated_at'];
-    protected $fillable = [
-        'cabType',
-        'pickupDate',
-        'pickupTime',
-        'pickup',
-        'dropoff',
-        'price',
-        'statusTrip',
-        'gratuity',
-        'passengerCounter',
-        'PaymentType',
-        'DriverNote',
-    ];
+
     public function driver(){
         return $this->belongsTo(Driver::class);
 
         }
+
         public function Passenger_Trip(){
             return $this->hasMany (Passenger_Trip::class);
                 }
